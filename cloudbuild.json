@@ -1,0 +1,16 @@
+{
+    "steps": [
+        {
+            "name": "gcr.io/google.com/cloudsdktool/cloud-sdk:latest",
+            "entrypoint": "gcloud",
+            "args": [
+                "beta", "run", "deploy", "public-${_TARGET_ALIAS}-${PROJECT_ID}-${_SERVICE_NAME}",
+                "--image=us.gcr.io/${PROJECT_ID}/${_SERVICE_NAME}/${_TARGET_ALIAS}:${_TARGET_IMAGE_TAG}",
+                "--labels=env=${_TARGET_ALIAS}",
+                "--region=us-central1",
+                "--platform=managed",
+                "--allow-unauthenticated"
+            ]
+        }
+    ]
+}

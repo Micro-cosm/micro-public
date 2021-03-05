@@ -1,0 +1,8 @@
+
+
+<div style="padding: 10%; ">
+	<div *ngIf="loading" style="text-align: center; "> Loading content... </div>
+	<div *ngFor="let content of content$ | async">
+			<div [innerHTML]="content.value"></div>
+	</div>
+</div>
